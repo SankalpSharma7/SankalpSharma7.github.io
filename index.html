@@ -32,7 +32,8 @@
     </style>
     <script type="module" crossorigin src="/assets/index-BMMw2xbo.js"></script>
     <script>
-      const addXProfileLink = () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        const addXProfileLink = () => {
         const copyright = [...document.querySelectorAll("p")].find((p) =>
           p.textContent.includes("The Backend Developer")
         );
@@ -49,14 +50,15 @@
         xLink.textContent = "𝕏";
         socialLinks.insertBefore(xLink, socialLinks.lastElementChild);
         return true;
-      };
+        };
 
-      if (!addXProfileLink()) {
-        const observer = new MutationObserver(() => {
-          if (addXProfileLink()) observer.disconnect();
-        });
-        observer.observe(document.getElementById("root"), { childList: true, subtree: true });
-      }
+        if (!addXProfileLink()) {
+          const observer = new MutationObserver(() => {
+            if (addXProfileLink()) observer.disconnect();
+          });
+          observer.observe(document.getElementById("root"), { childList: true, subtree: true });
+        }
+      });
     </script>
   </head>
   <body>
