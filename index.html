@@ -32,12 +32,13 @@
     </style>
     <script type="module" crossorigin src="/assets/index-BMMw2xbo.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
+      const addXProfileLink = () => {
         const copyright = [...document.querySelectorAll("p")].find((p) =>
           p.textContent.includes("The Backend Developer")
         );
         const socialLinks = copyright?.previousElementSibling;
-        if (!socialLinks || socialLinks.querySelector('[aria-label="X profile"]')) return;
+        if (!socialLinks) return false;
+        if (socialLinks.querySelector('[aria-label="X profile"]')) return true;
 
         const xLink = document.createElement("a");
         xLink.href = "https://x.com/sankalp443";
@@ -47,7 +48,15 @@
         xLink.className = "transform hover:scale-125 transition-transform text-white hover:text-gray-400 text-5xl font-bold";
         xLink.textContent = "𝕏";
         socialLinks.insertBefore(xLink, socialLinks.lastElementChild);
-      });
+        return true;
+      };
+
+      if (!addXProfileLink()) {
+        const observer = new MutationObserver(() => {
+          if (addXProfileLink()) observer.disconnect();
+        });
+        observer.observe(document.getElementById("root"), { childList: true, subtree: true });
+      }
     </script>
   </head>
   <body>
