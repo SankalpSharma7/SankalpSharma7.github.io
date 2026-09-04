@@ -1,65 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/images/Sankalp-hero-logo.png" />
     <title>The Developer - Comic Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-      /* Custom scrollbar for the comic feel */
-      ::-webkit-scrollbar {
-        width: 12px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #ffffff;
-        border-left: 3px solid black;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #000000;
-        border: 2px solid #ffffff;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #333333;
-      }
-      body {
-        background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-    </style>
-    <script type="module" crossorigin src="/assets/index-BMMw2xbo.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const addXProfileLink = () => {
-        const copyright = [...document.querySelectorAll("p")].find((p) =>
-          p.textContent.includes("The Backend Developer")
-        );
-        const socialLinks = copyright?.previousElementSibling;
-        if (!socialLinks) return false;
-        if (socialLinks.querySelector('[aria-label="X profile"]')) return true;
-
-        const xLink = document.createElement("a");
-        xLink.href = "https://x.com/sankalp443";
-        xLink.target = "_blank";
-        xLink.rel = "noopener noreferrer";
-        xLink.setAttribute("aria-label", "X profile");
-        xLink.className = "transform hover:scale-125 transition-transform text-white hover:text-gray-400 text-5xl font-bold";
-        xLink.textContent = "𝕏";
-        socialLinks.insertBefore(xLink, socialLinks.lastElementChild);
-        return true;
-        };
-
-        if (!addXProfileLink()) {
-          const observer = new MutationObserver(() => {
-            if (addXProfileLink()) observer.disconnect();
-          });
-          observer.observe(document.getElementById("root"), { childList: true, subtree: true });
-        }
-      });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-B-iuKzgx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-qbKfX1He.css">
   </head>
   <body>
     <div id="root"></div>
